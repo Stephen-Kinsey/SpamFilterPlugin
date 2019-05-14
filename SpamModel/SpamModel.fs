@@ -1,5 +1,5 @@
 ﻿namespace SpamModel
-module SpamModel =
+module spamModel =
     open System.IO
     open Microsoft.ML
     open Microsoft.ML.Data
