@@ -51,8 +51,11 @@ module spamModel =
     
     // Check if email is spam. Returns simple boolean
     // subject and bodyText should be free of quotation marks and other characters that could escape the string.
-    let isSpam (predictor:PredictionEngine<EmailData, EmailResult>) subject bodyText = 
-        let prediction = predictor.Predict({HamOrSpam = false; Subject = subject; BodyText = bodyText})
+    let isSpam (predictor:PredictionEngine<EmailData, EmailResult>) (subject:string) (bodyText:string) = 
+        true
+        //let prediction = predictor.Predict({HamOrSpam = false; Subject = subject; BodyText = bodyText})
+        //true
+        (*
         // Debug data
         #if DEBUG
         subject |> printfn "DEBUG: Subject: %s"
@@ -60,3 +63,4 @@ module spamModel =
         prediction.Probability |> printfn "DEBUG: Probability: %%%A -- WIP"
         #endif
         prediction.PredictedLabel = true
+        *)

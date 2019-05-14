@@ -55,7 +55,6 @@
   <Import Project="..\packages\Microsoft.ML.1.0.0\build\netstandard2.0\Microsoft.ML.targets" Condition="Exists('..\packages\Microsoft.ML.1.0.0\build\netstandard2.0\Microsoft.ML.targets')" />
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
-    <None Include="spamModel" />
     <Compile Include="SpamModel.fsi" />
     <Compile Include="SpamModel.fs" />
     <Content Include="packages.config" />

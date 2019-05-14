@@ -59,11 +59,6 @@ namespace OutlookPlugin {
             this.OnStartup();
         }
 
-        private void InternalStartup()
-        {
-            throw new NotImplementedException();
-        }
-
         /// 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "15.0.0.0")]

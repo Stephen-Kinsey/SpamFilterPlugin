@@ -28,6 +28,9 @@ namespace OutlookPlugin
             items = inbox.Items;
             items.ItemAdd +=
                 new Outlook.ItemsEvents_ItemAddEventHandler(Items_ItemAdd);
+
+            this.Startup += new System.EventHandler(ThisAddIn_Startup);
+            this.Shutdown += new System.EventHandler(ThisAddIn_Shutdown);
         }
 
         private void Items_ItemAdd(object Item)
@@ -35,5 +38,22 @@ namespace OutlookPlugin
             Outlook.MailItem mail = (Outlook.MailItem)Item;
             fsMessages.checkIsSpam((Outlook.MailItem)Item, (Outlook.NameSpace)outlookNameSpace,(Microsoft.ML.PredictionEngine<spamModel.EmailData, spamModel.EmailResult>)predictionEngine);
         }
+
+        private void ThisAddIn_Shutdown(object sender, System.EventArgs e)
+        {
+        }
+        #region VSTO generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InternalStartup()
+        {
+            this.Startup += new System.EventHandler(ThisAddIn_Startup);
+            this.Shutdown += new System.EventHandler(ThisAddIn_Shutdown);
+        }
+
+        #endregion
     }
 }
