@@ -11,6 +11,8 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "SpamModel", "SpamModel\Spam
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "TextCleaner", "TextCleaner\TextCleaner.fsproj", "{37C4F5B4-ADC2-45A2-A9BE-F490D72F5A9A}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "SpamFilterTest", "SpamFilterTest\SpamFilterTest.fsproj", "{ED720A34-8828-48D5-A5A7-B93C8D04E0CD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{37C4F5B4-ADC2-45A2-A9BE-F490D72F5A9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37C4F5B4-ADC2-45A2-A9BE-F490D72F5A9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37C4F5B4-ADC2-45A2-A9BE-F490D72F5A9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED720A34-8828-48D5-A5A7-B93C8D04E0CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED720A34-8828-48D5-A5A7-B93C8D04E0CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED720A34-8828-48D5-A5A7-B93C8D04E0CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED720A34-8828-48D5-A5A7-B93C8D04E0CD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
