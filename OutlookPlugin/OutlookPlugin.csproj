@@ -228,6 +228,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="DeleteBat.bat" />
+    <None Include="MoverBat.bat" />
     <None Include="OutlookPlugin_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
