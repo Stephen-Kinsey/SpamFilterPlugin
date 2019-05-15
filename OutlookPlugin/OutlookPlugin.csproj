@@ -296,16 +296,18 @@
     <Error Condition="!Exists('..\packages\Microsoft.ML.1.0.0\build\netstandard2.0\Microsoft.ML.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ML.1.0.0\build\netstandard2.0\Microsoft.ML.props'))" />
     <Error Condition="!Exists('..\packages\Microsoft.ML.1.0.0\build\netstandard2.0\Microsoft.ML.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ML.1.0.0\build\netstandard2.0\Microsoft.ML.targets'))" />
   </Target>
+
   <Target Name="AfterClean">
-    <Delete Files="%TEMP%\spamModel" ContinueOnError="true" />
+    <Delete Files="%Temp%\spamModel" ContinueOnError="true" />
   </Target>
+
   <Import Project="..\packages\Microsoft.ML.1.0.0\build\netstandard2.0\Microsoft.ML.targets" Condition="Exists('..\packages\Microsoft.ML.1.0.0\build\netstandard2.0\Microsoft.ML.targets')" />
   <PropertyGroup>
     <PreBuildEvent>echo "Pre-build events"
 call D:\source\CMP5344\SpamFilter\OutlookPlugin\MoverBat.bat</PreBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PostBuildEvent>echo "Post-build events"
-echo "call D:\source\CMP5344\SpamFilter\OutlookPlugin\DeleteBat.bat"</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
 </Project>
