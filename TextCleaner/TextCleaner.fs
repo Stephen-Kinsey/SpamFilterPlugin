@@ -1,42 +1,39 @@
 ﻿namespace TextCleaner
-module TextCleaner =
-    open System
+module textCleaner =
 
-    /// Strips all html tags out of a string
-    let striptags input = 
-        let rec get_next_character (flag, text) =
-            match flag with
-            | _     when (Seq.isEmpty text)    -> None
-            | _     when (Seq.head text = '<') -> get_next_character (false,  Seq.tail text) 
-            | _     when (Seq.head text = '>') -> get_next_character (true,   Seq.tail text)
-            | _     when (Seq.head text = '"') -> get_next_character (true,   Seq.tail text) 
-            | false                            -> get_next_character (false,  Seq.tail text) 
-            | true                             -> Some (Seq.head text, (true, Seq.tail text)) 
-        
-        Seq.unfold get_next_character (true, input) 
-        |> Seq.toArray 
-        |> String 
-
-    /// Removed all tabs and replaces them with a single space
-    let tabtospace (s : String) =
-        /// takes a string as an input
+    // Removes tab characters and converts them to a single space
+    let tabCharacterToSpace (s : string) =
         s.Replace("\t", " ")
-        /// looks through the string and replaces all instances where a \t (tab) is found with a ' ' (space)
 
+    // Removes tabs and converts them to a single space
+    let tabToSpace (s : string) =
+        s.Replace("     "," ")
 
-    /// Removes instances where there is a space more than once and replaces them with a single space
-    let rec singlespace (s : String) =
-        /// takes a string as an input
+    // Removes instances of multiple spaces and converts them to a singlular space
+    let rec singleSpace (s : string) =
         if s.Contains("  ") then
-            singlespace (s.Replace("  ", " "))
-        /// checks to see if the string contains "  " (multiple spaces) and replaces them with a " " (single space)
+            singleSpace (s.Replace("  ", " "))
         else
             s
-        /// if there are no cases of multiple spaces, return the input
 
-    ///let fullparse = singlespace |> tabtospace |> striptags
+    // Removes quatation marks and replaces them with an empty string -- Quotes mess up the spam filter
+    let removeQuotes (s : string) =
+        s.Replace("\"","")
 
+    // Removes newline characters
+    let removeNewLine (s : string) =
+        s.Replace("\n","")
 
-    let result = striptags "This text is HTML\" with an \"embeded<img> tag"
-    let result1 = tabtospace "hello\tworld!"
-    let result2 = singlespace "hello       world!"
+    // Removes carriage return characters
+    let removeCarriageReturn (s : string) =
+        s.Replace("\r","")
+
+    // Combines all stripping functions in to one full parse
+    let fullParse str = 
+        str
+        |> tabCharacterToSpace
+        |> tabToSpace
+        |> removeNewLine
+        |> removeCarriageReturn
+        |> removeQuotes 
+        |> singleSpace
