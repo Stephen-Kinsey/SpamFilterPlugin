@@ -305,7 +305,7 @@
   <Import Project="..\packages\Microsoft.ML.1.0.0\build\netstandard2.0\Microsoft.ML.targets" Condition="Exists('..\packages\Microsoft.ML.1.0.0\build\netstandard2.0\Microsoft.ML.targets')" />
   <PropertyGroup>
     <PreBuildEvent>echo "Pre-build events"
-call  $(ProjectDir)\MoverBat.bat</PreBuildEvent>
+call  $(ProjectDir)MoverBat.bat</PreBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
     <PostBuildEvent>
