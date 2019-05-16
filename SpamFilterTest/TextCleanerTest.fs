@@ -98,7 +98,7 @@ module TextCleanerTest =
 
     [<Test>]
     let ``fullParse converts multiple spaces to a single space`` () =
-        Assert.pass()
+        Assert.Pass()
     
     [<Test>]
     let ``fullParse converts both tab characters and tabs in the same string`` () =
