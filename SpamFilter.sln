@@ -11,7 +11,7 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "SpamModel", "SpamModel\Spam
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "TextCleaner", "TextCleaner\TextCleaner.fsproj", "{37C4F5B4-ADC2-45A2-A9BE-F490D72F5A9A}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "SpamFilterTest", "SpamFilterTest\SpamFilterTest.fsproj", "{ED720A34-8828-48D5-A5A7-B93C8D04E0CD}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "SpamFilterTest", "SpamFilterTest\SpamFilterTest.fsproj", "{ED720A34-8828-48D5-A5A7-B93C8D04E0CD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

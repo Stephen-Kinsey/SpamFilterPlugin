@@ -22,12 +22,9 @@
   <ItemGroup>
     <Compile Include="TextCleanerTest.fs" />
     <Compile Include="SpamModelTest.fs" />
-    <Compile Include="MailCoreTest.fs" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MailCore\MailCore.fsproj" />
-    <ProjectReference Include="..\OutlookPlugin\OutlookPlugin.csproj" />
     <ProjectReference Include="..\SpamModel\SpamModel.fsproj" />
     <ProjectReference Include="..\TextCleaner\TextCleaner.fsproj" />
   </ItemGroup>
