@@ -109,5 +109,5 @@ module TextCleanerTest =
     
     [<Test>]
     let ``fullParse completely strips everything out of a string which is not needed in the SpamFilter`` () =
-        let testString21 = fullParse "T\nh\ris    is      a\t test  str\"ing"
+        let testString21 = fullParse "T\nh\ris    is      \r    a\t test  str\"ing"
         Assert.AreEqual(testString,testString21)
