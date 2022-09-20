@@ -1,3 +1,3 @@
 ﻿namespace TextCleaner
 module textCleaner =
-    val fullParse : string -> string
+    val fullParse : string -> string option

@@ -30,10 +30,16 @@ module textCleaner =
 
     // Combines all stripping functions in to one full parse
     let fullParse str = 
-        str
-        |> tabCharacterToSpace
-        |> tabToSpace
-        |> removeNewLine
-        |> removeCarriageReturn
-        |> removeQuotes 
-        |> singleSpace
+        if str = null
+        then
+            None
+        else
+            let strCopy = str
+            str
+            |> tabCharacterToSpace
+            |> tabToSpace
+            |> removeNewLine
+            |> removeCarriageReturn
+            |> removeQuotes 
+            |> singleSpace
+            |> Some

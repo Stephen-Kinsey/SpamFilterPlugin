@@ -274,7 +274,7 @@
     <ManifestKeyFile>OutlookPlugin_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>D4FC17CD1DE50E80790B7FFA71948AEF12408620</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>1DD54F1ED97B5891666CEA6B2696A7FC3CE889F2</ManifestCertificateThumbprint>
   </PropertyGroup>
   <!-- Include the build rules for a C# project. -->
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

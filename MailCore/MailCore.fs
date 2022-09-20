@@ -12,12 +12,18 @@ module fsMessages =
         | "IPM.Note" ->
             //Calls Wills Textcleaner with the value mail.Body and then mail.subject which is string
             //The cleaned strings are then piped into the isSpam method which will return a true or false value determining whether or not an email is spam
-            if textCleaner.fullParse(mail.Body) |> (textCleaner.fullParse(mail.Subject) |> (predictionEngine|> isSpam))
-            then 
-                //Moves a Mailitem object (an email) to the default junk folder
-                mail.Move(outlookNamespace.GetDefaultFolder(Microsoft.Office.Interop.Outlook.OlDefaultFolders.olFolderJunk)) |> ignore
-                ()
-            else 
+            //let subject = mail.Subject
+            match textCleaner.fullParse mail.Body, 
+                    textCleaner.fullParse mail.Subject  with
+            |Some body, Some subject ->
+                if  body |> (subject |> (predictionEngine|> isSpam))
+                then 
+                    //Moves a Mailitem object (an email) to the default junk folder
+                    mail.Move(outlookNamespace.GetDefaultFolder(Microsoft.Office.Interop.Outlook.OlDefaultFolders.olFolderJunk)) |> ignore
+                    ()
+                else 
+                    ()
+            |_ ->
                 ()
         | _ ->
             ()

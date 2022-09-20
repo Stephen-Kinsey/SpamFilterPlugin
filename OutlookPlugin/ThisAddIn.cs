@@ -49,7 +49,7 @@ namespace OutlookPlugin
             Outlook.MailItem mail = (Outlook.MailItem)Item;
             //This is a call to the MailCore library with the following parameters being passed; The MailItem object, the Outlook namespace and the spam model we previously created.
             //This is so there does need to be anything else programmed in C# and all of the email moving and predictions can be done in F#
-            fsMessages.checkIsSpam((Outlook.MailItem)Item, (Outlook.NameSpace)outlookNameSpace,(Microsoft.ML.PredictionEngine<spamModel.EmailData, spamModel.EmailResult>)predictionEngine);
+            fsMessages.checkIsSpam(mail, outlookNameSpace, predictionEngine);
         }
 
         private void ThisAddIn_Shutdown(object sender, System.EventArgs e)
